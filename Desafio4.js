@@ -25,7 +25,6 @@ function votacao(nascimento) {
   if (nascimento >= 2006) {
     return console.log("PREZADO ELEITOR: Voce não está autorizado a votar!\n");
   } else {
-    //    return console.log("Inicie a votação!")
     return console.log(
       "\033[1;32m Você está autorizado a votar, vamos iniciar a votação:\n "
     );
@@ -79,20 +78,9 @@ if (nascimento <= 2007) {
 }
 
 console.log("\033[1;36m");
-// console.log(`O candidato 1 recebeu ${candidato1} voto(s)`);
-// console.log(`O candidato 2 recebeu ${candidato2} voto(s)`);
-// console.log(`O candidato 3 recebeu ${candidato3} voto(s)`);
-// console.log(`Votos nulos recebeu ${candidato4} voto(s)`);
-// console.log(`Votos em branco recebeu ${candidato5} voto(s)`);
 
-/* Ter uma função chamada exibirResultados() que deve mostrar:
- - O total de votos para cada candidato 
- - O total de votos nulos
- - O total de votos em branco
- - Qual candidato venceu a votação */
 listaVotados = [candidato1, candidato2, candidato3];
 listaVotados.push();
-//  console.log(listaVotados);
 
 function exibirResultados(listaVotados) {
   console.log(`O candidato 1 recebeu ${candidato1} voto(s)`);
@@ -102,14 +90,30 @@ function exibirResultados(listaVotados) {
   console.log(`Votos em branco recebeu ${candidato5} voto(s)`);
   console.log();
   if (candidato1 > candidato2 && candidato1 > candidato3) {
-    console.log("\033[1;33m")
-    return console.log(`O candidato 1 foi eleito com ${candidato1} voto(s) dos votos válidos`);
+    console.log("\033[1;33m");
+    return console.log(
+      `O candidato 1 foi eleito com ${candidato1} voto(s) dos votos válidos`
+    );
   } else if (candidato2 > candidato1 && candidato2 > candidato3) {
-    return console.log(`O candidato 2 foi eleito com ${candidato2} voto(s) dos votos válidos`);
-  } else (candidato3 > candidato1 && candidato3 > candidato2)
-  return console.log(`O candidato 3 foi eleito com ${candidato3} voto(s) do total de votos válidos`);
-  
+    return console.log(
+      `O candidato 2 foi eleito com ${candidato2} voto(s) dos votos válidos`
+    );
+  } else if (candidato3 > candidato1 && candidato3 > candidato2) {
+    return console.log(
+      `O candidato 3 foi eleito com ${candidato3} voto(s) do total de votos válidos`
+    );
+  } else if (candidato1 > candidato2 && candidato1 == candidato3) {
+    return console.log("Deu empate entre o candidato 1 e o candidato 3, terá segundo turno!");
+  } else if (candidato1 > candidato3 && candidato1 == candidato2) {
+    return console.log("Deu empate entre o candidato 1 e o candidato 2, terá segundo turno!");
+  } else if (candidato2 > candidato1 && candidato1 == candidato3) {
+    return console.log("Deu empate entre o candidato 2 e o candidato 3, terá segundo turno!");
+  } else
+    candidato1 == candidato3 &&
+      candidato1 == candidato2 &&
+      candidato2 == candidato3;
+  return console.log(
+    "Deu empate entre o candidato 1, o candidato 2 e o candidato 3, terá segundo turno!"
+  );
 }
-  
 exibirResultados(votos);
-
