@@ -84,9 +84,6 @@ if (nascimento <= 2007) {
 
 console.log("\033[1;36m");
 
-listaVotados = [candidato1, candidato2, candidato3];
-listaVotados.push();
-
 function exibirResultados(listaVotados) {
   console.log(`O candidato 1 recebeu ${candidato1} voto(s)`);
   console.log(`O candidato 2 recebeu ${candidato2} voto(s)`);
