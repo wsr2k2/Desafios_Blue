@@ -1,5 +1,10 @@
 const prompt = require("prompt-sync")();
 
+
+console.log("====================================================");
+console.log("----------------- ELEIÇÕES 2021 --------------------");
+console.log("====================================================");
+
 // Função para verificar se o eleitor tem idade permitida para votar.
 let nascimento = +prompt("Digite o ano do seu nascimento: ");
 console.log();
